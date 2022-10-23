@@ -3,10 +3,12 @@ import ReactMarkdown from "react-markdown";
 import remarkDirective from "remark-directive";
 import remarkDirectiveRehype from "remark-directive-rehype";
 import { rehypeCodeQuiz, remarkCreateCodeQuiz } from "../lib/utils/markdownPlugins";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Test from "../lib/components/Quiz";
 import MonacoEditor from "@monaco-editor/react";
 import CrossWord from "../lib/components/CrossWord";
+import { useAuth } from "../src/context/auth-context";
+import { useRouter } from "next/router";
 
 const componentsOptions = {
   /* @ts-ignore */
@@ -19,12 +21,12 @@ const componentsOptions = {
   }
 };
 
-const App = () => {
-  const [markdown, setMarkdown] = useState("");
+const MarkdownApp = ({ markdown, setMarkdown, handleUpdate }) => {
   const [toRender, setToRender] = useState("");
 
   const handleCompile = () => {
     setToRender(markdown);
+    handleUpdate();
   };
 
   return (
@@ -39,6 +41,7 @@ const App = () => {
             height="90vh"
             theme="vs-dark"
             defaultLanguage="markdown"
+            value={markdown}
             onChange={(value) => {
               setMarkdown(value || "");
             }}
@@ -62,4 +65,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default MarkdownApp;
