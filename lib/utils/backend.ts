@@ -5,7 +5,7 @@ export let Axios = axios.create({
 });
 
 export function backendUrl(path) {
-  const BACKEND_HOST = "http://localhost:3000/api/";
+  const BACKEND_HOST = process.env.NEXT_PUBLIC_BACKEND_PATH;
   return BACKEND_HOST + path;
 }
 
