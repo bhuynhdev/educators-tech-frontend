@@ -1,0 +1,22 @@
+.formfield {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  margin-bottom: 2em;
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  input {
+    display: block;
+    padding: 0.75em 1em;
+    border: 2px solid black;
+    border-radius: 5px;
+  }
+
+  label {
+    align-self: flex-start;
+  }
+}

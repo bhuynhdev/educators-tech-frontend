@@ -19,12 +19,14 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+section {
+  padding: 0 8rem;
+}
+
+body {
+  height: 100vh;
+}
+
+#__next {
+  height: 100%;
 }
