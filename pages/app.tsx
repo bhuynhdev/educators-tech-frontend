@@ -2,15 +2,20 @@ import rehypeHighlight from "rehype-highlight";
 import ReactMarkdown from "react-markdown";
 import remarkDirective from "remark-directive";
 import remarkDirectiveRehype from "remark-directive-rehype";
-import { rehypeCodeQuiz, remarkCreateCodeQuiz } from "../lib/utils/remarkPlugins";
+import { rehypeCodeQuiz, remarkCreateCodeQuiz } from "../lib/utils/markdownPlugins";
 import { useState } from "react";
 import Test from "../lib/components/Quiz";
 import MonacoEditor from "@monaco-editor/react";
+import CrossWord from "../lib/components/CrossWord";
 
 const componentsOptions = {
   /* @ts-ignore */
   quiz: ({ node }) => {
     return <Test target={node.answer} language={node.language} />;
+  },
+
+  cw: ({ children }) => {
+    return <CrossWord children={children} />;
   }
 };
 
@@ -34,7 +39,7 @@ const App = () => {
             height="90vh"
             theme="vs-dark"
             defaultLanguage="markdown"
-            onChange={(value, event) => {
+            onChange={(value) => {
               setMarkdown(value || "");
             }}
           />
