@@ -17,7 +17,7 @@ const Home: NextPage = () => {
         <section className={`${styles.hero} flex flex-col justify-center items-start`}>
           <h1 className="text-6xl my-8">Welcome to EducatorsPower.tech</h1>
           <p className="text-2xl">Where Technology Empowers Educators</p>
-          <Link href="/app">
+          <Link href="/login">
             <a className="px-8 py-4 mt-8 bg-orange-400 rounded-md inline-block">Go to App</a>
           </Link>
         </section>
