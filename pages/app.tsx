@@ -17,7 +17,7 @@ const componentsOptions = {
   },
 
   cw: ({ children }) => {
-    return <CrossWord children={children} />;
+    return <CrossWord>{children}</CrossWord>;
   }
 };
 
