@@ -41,8 +41,8 @@ const Me: React.FC<{}> = () => {
     <div>
       <h2>Me</h2>
       <pre>{JSON.stringify(user, null, 2)}</pre>
-      {notes.map(({ title }) => (
-        <h3>{title}</h3>
+      {notes.map(({ title }, i) => (
+        <h3 key={i}>{title}</h3>
       ))}
       <button onClick={handleCreateNote}>Create Note +</button>
     </div>

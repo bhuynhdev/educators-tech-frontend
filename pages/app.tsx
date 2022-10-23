@@ -55,6 +55,7 @@ const MarkdownApp = ({ markdown, setMarkdown, handleUpdate }) => {
             remarkPlugins={[remarkCreateCodeQuiz, remarkDirective, remarkDirectiveRehype]}
             remarkRehypeOptions={{ passThrough: ["quiz"] }}
             rehypePlugins={[rehypeCodeQuiz, rehypeHighlight]}
+            /* @ts-ignore */
             components={componentsOptions}
           >
             {toRender}
